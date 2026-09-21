@@ -1,6 +1,11 @@
-// ===============================
+// ==========================================
+// REFORMA360 - JAVASCRIPT COMPLETO
+// ==========================================
+
+
+// ==========================================
 // FORMULARIO DEMOSTRATIVO
-// ===============================
+// ==========================================
 
 const form = document.getElementById("contactForm");
 
@@ -33,65 +38,162 @@ if (form) {
 }
 
 
-// ===============================
+
+// ==========================================
 // PORTFOLIO INTERACTIVO
-// ===============================
+// ==========================================
 
 const projects = document.querySelectorAll(".project");
 
 const modal = document.getElementById("projectModal");
 
 const modalImage = document.getElementById("modalImage");
+
 const modalTitle = document.getElementById("modalTitle");
+
 const modalText = document.getElementById("modalText");
 
-const closeModal = document.getElementById("closeModal");
+const closeModalButton = document.getElementById("closeModal");
 
+
+
+function abrirProyecto(project) {
+
+  if (!modal) return;
+
+  modalImage.src = project.dataset.image;
+
+  modalTitle.textContent = project.dataset.title;
+
+  modalText.textContent = project.dataset.text;
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
+
+  // Esto permite que el botón atrás del móvil
+  // cierre primero el proyecto.
+
+  history.pushState(
+    { modalOpen: true },
+    "",
+    "#proyecto"
+  );
+
+}
+
+
+
+function cerrarProyecto(cambiarHistorial = true) {
+
+  if (!modal) return;
+
+  modal.classList.remove("active");
+
+  document.body.style.overflow = "";
+
+
+  if (
+    cambiarHistorial &&
+    window.location.hash === "#proyecto"
+  ) {
+
+    history.back();
+
+  }
+
+}
+
+
+
+// ==========================================
+// ABRIR PROYECTOS
+// ==========================================
 
 projects.forEach(project => {
 
-  project.addEventListener("click", () => {
+  project.addEventListener("click", function () {
 
-    modalImage.src = project.dataset.image;
-
-    modalTitle.textContent = project.dataset.title;
-
-    modalText.textContent = project.dataset.text;
-
-    modal.classList.add("active");
-
-    document.body.style.overflow = "hidden";
+    abrirProyecto(project);
 
   });
 
 });
 
 
-function cerrarModal() {
 
-  modal.classList.remove("active");
+// ==========================================
+// BOTÓN X
+// ==========================================
 
-  document.body.style.overflow = "";
+if (closeModalButton) {
+
+  closeModalButton.addEventListener("click", function () {
+
+    cerrarProyecto();
+
+  });
 
 }
 
 
-closeModal.addEventListener("click", cerrarModal);
+
+// ==========================================
+// TOCAR FUERA DE LA VENTANA
+// ==========================================
+
+if (modal) {
+
+  modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+
+      cerrarProyecto();
+
+    }
+
+  });
+
+}
 
 
-modal.addEventListener("click", event => {
 
-  if (event.target === modal) {
-    cerrarModal();
+// ==========================================
+// TECLA ESCAPE
+// ==========================================
+
+document.addEventListener("keydown", function (event) {
+
+  if (
+    event.key === "Escape" &&
+    modal &&
+    modal.classList.contains("active")
+  ) {
+
+    cerrarProyecto();
+
   }
 
 });
 
 
-document.addEventListener("keydown", event => {
 
-  if (event.key === "Escape") {
-    cerrarModal();
+// ==========================================
+// BOTÓN ATRÁS DEL MÓVIL
+// ==========================================
+
+window.addEventListener("popstate", function () {
+
+  if (
+    modal &&
+    modal.classList.contains("active")
+  ) {
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
   }
 
 });
