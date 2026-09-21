@@ -610,3 +610,61 @@ footer p {
     scroll-margin-top: 75px;
   }
 }
+/* ===== REFORMA360 V3 - PORTFOLIO VISUAL ===== */
+
+.project-one {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.08)
+    ),
+    url("proyecto-cocina.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-two {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.08)
+    ),
+    url("proyecto-bano.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-three {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.08)
+    ),
+    url("proyecto-salon.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project {
+  min-height: 360px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project span {
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 600px) {
+  .project {
+    min-height: 280px;
+  }
+}
