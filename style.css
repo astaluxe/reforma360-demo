@@ -84,10 +84,17 @@ nav a:hover {
   background:
     linear-gradient(
       90deg,
-      rgba(15, 15, 15, 0.95),
-      rgba(15, 15, 15, 0.7)
+      rgba(10, 10, 10, 0.88) 0%,
+      rgba(10, 10, 10, 0.72) 45%,
+      rgba(10, 10, 10, 0.35) 100%
     ),
-    linear-gradient(135deg, #1b1b1b, #39342d);
+    url("hero-reforma.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
   color: white;
 }
 
