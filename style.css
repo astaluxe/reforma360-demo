@@ -468,3 +468,145 @@ footer p {
     min-height: 68px;
   }
 }
+/* ===== REFORMA360 V2 - AJUSTES MÓVIL ===== */
+
+@media (max-width: 600px) {
+
+  /* CABECERA MÁS COMPACTA */
+
+  .nav {
+    min-height: 62px;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .nav-button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: auto;
+    padding: 70px 0 55px;
+    background-position: center;
+  }
+
+  .hero-content {
+    gap: 28px;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+    line-height: 1.02;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+
+  /* BOTONES */
+
+  .hero-buttons {
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 13px 18px;
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* PUNTOS DE CONFIANZA */
+
+  .hero-points {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.86rem;
+  }
+
+
+  /* CAJA DE PRESUPUESTO */
+
+  .hero-card {
+    padding: 24px;
+  }
+
+  .hero-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card p {
+    font-size: 0.95rem;
+  }
+
+
+  /* SECCIONES */
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+
+  /* SERVICIOS */
+
+  .services-grid {
+    gap: 14px;
+  }
+
+  .service-card {
+    padding: 22px;
+  }
+
+  .service-number {
+    margin-bottom: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+  }
+
+
+  /* EVITA QUE EL MENÚ TAPE LAS SECCIONES */
+
+  #servicios,
+  #proceso,
+  #proyectos,
+  #contacto {
+    scroll-margin-top: 75px;
+  }
+}
