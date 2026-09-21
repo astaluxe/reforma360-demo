@@ -668,3 +668,113 @@ footer p {
     min-height: 280px;
   }
 }
+/* ===== REFORMA360 V4 - MODAL PROYECTOS ===== */
+
+.project {
+  cursor: pointer;
+}
+
+.project span {
+  transition: 0.2s ease;
+}
+
+.project:hover span {
+  transform: translateY(-3px);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 5000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+
+  width: min(900px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+}
+
+.modal-content img {
+  width: 100%;
+  display: block;
+
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 32px;
+}
+
+.modal-info h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.modal-info p {
+  color: #555;
+}
+
+.modal-demo {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #999 !important;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.8);
+  color: white;
+
+  font-size: 1.7rem;
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-info {
+    padding: 24px;
+  }
+
+  .modal-info h2 {
+    font-size: 1.6rem;
+  }
+
+}
